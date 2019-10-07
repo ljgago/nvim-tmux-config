@@ -5,10 +5,10 @@
 " JSON disable hide quites
 " let g:conceallevel = 0
 
-let g:indentLine_enabled = 1
+let g:indentLine_enabled = 0
 let g:indentLine_conceallevel = 1
-let g:indentLine_setConceal = 1
-let g:indentLine_fileTypeExclude=['tex', 'json']
+let g:indentLine_fileTypeExclude = ['txt', 'tex', 'json', 'swagger']
+let g:indentLine_setConceal = 0
 " let g:indentLine_concealcursor="nc"
 " let g:indentLine_setColors=1
 

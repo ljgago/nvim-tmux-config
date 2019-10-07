@@ -20,6 +20,7 @@ Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs' " Autocomplete simbols
 Plug 'jremmen/vim-ripgrep'
 Plug 'majutsushi/tagbar'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'aurieh/discord.nvim', { 'do': ':UpdateRemotePlugins'}
 " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'Shougo/unite.vim'
@@ -27,16 +28,32 @@ Plug 'majutsushi/tagbar'
 " Plug 'ryanoasis/vim-devicons'
 
 " Code Syntax Integration
-Plug 'Yggdroot/indentLine'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'fatih/vim-go' ", { 'tag': '*' }
-Plug 'cespare/vim-toml'
-Plug 'w0rp/ale'
-Plug 'rust-lang/rust.vim'
-Plug 'chooh/brightscript.vim' 
-Plug 'pangloss/vim-javascript'
-Plug 'posva/vim-vue'
+" c++
 Plug 'bfrg/vim-cpp-modern'
+" go
+Plug 'fatih/vim-go' ", { 'tag': '*' }
+" javascript
+Plug 'pangloss/vim-javascript'
+" typescrypt
+" Plug 'HerringtonDarkholme/yats.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'maxmellon/vim-jsx-pretty'
+" Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+" Plug 'othree/yajs.vim'
+" Plug 'peitalin/vim-jsx-typescript'
+" Plug 'styled-components/vim-styled-components'
+
+" rust
+Plug 'rust-lang/rust.vim'
+" toml
+Plug 'cespare/vim-toml'
+" vue
+Plug 'posva/vim-vue'
+
+" Plug 'Yggdroot/indentLine'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'dense-analysis/ale'
+Plug 'chooh/brightscript.vim' 
 
 " Powerline Color
 Plug 'itchyny/lightline.vim'
@@ -48,6 +65,11 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'lifepillar/vim-solarized8'
 Plug 'joshdick/onedark.vim'
 Plug 'rakr/vim-one'
+Plug 'jeffkreeftmeijer/vim-dim'
+Plug 'owickstrom/vim-colors-paramount'
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'morhetz/gruvbox'
+Plug 'trevordmiller/nova-vim'
 
 " Discord Rich Presence
 " Plug 'anned20/vimsence'
@@ -62,13 +84,17 @@ call plug#end()
 " =====================================================================================================================
 "
 " General settings 
-set title               " show the file name on terminal window.
-set number              " show line numbers.
-set mouse=a             " enable mouse interaction.
-set history=1000        " increase history size.
-set nowrap              " do not divide the line if it is long.
-set cursorline          " show the current line.
-set cursorcolumn        " show the cursor column
+set title                   " show the file name on terminal window.
+set number                  " show line numbers.
+set mouse=a                 " enable mouse interaction.
+set history=1000            " increase history size.
+set nowrap                  " do not divide the line if it is long.
+set cursorline              " show the current line.
+set cursorcolumn            " show the cursor column
+" set wildmode=longest:full
+" set wildmenu                " enchanced command line completion
+" set wildmode=list:full      " complete files like a shell
+
 " set colorcolumn=120   " show the 120 character limit column
 
 
@@ -84,7 +110,7 @@ set shiftround
 set expandtab       " inserts spaces indest <Tab>s
 
 " Clipboard, you need install xsel
-set clipboard+=unnamedplus
+" set clipboard+=unnamedplus
 
 " Search options
 set ignorecase              " ignore uppercase in searches.
@@ -97,6 +123,7 @@ filetype plugin indent on
 set spelllang=en,es             " spell check (english and spanish)
 set encoding=UTF-8              " encodig utf-8
 set backspace=indent,eol,start  " backspaceever work on insert mode
+" JSON disable hide quites
 
 " Auto Open NERDtree
 " autocmd vimenter * NERDTree
@@ -121,6 +148,7 @@ colorscheme one             " theme name
 
 " let g:deoplete#enable_at_startup = 1
 " let g:tagbar_expand = 1
+set pyxversion=3
 
 " Remap keys
 nnoremap <C-Left> :bprevious<CR>
@@ -134,4 +162,11 @@ inoremap <F4> <Esc>:NERDTreeToggle<CR>
 nnoremap <F5> :TagbarToggle<CR>
 inoremap <F5> <Esc>:TagbarToggle<CR>
 
+" if &wildoptions =~ "pum"
+"    cnoremap <expr> <up> pumvisible() ? "<C-p>" : "\\<up>"
+"    cnoremap <expr> <down> pumvisible() ? "<C-n>" : "\\<down>"
+"endif
+
+
 autocmd TermOpen term://* startinsert
+

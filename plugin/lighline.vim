@@ -3,10 +3,18 @@
 " Plug 'itchyny/lightline.vim'
 "
 " Config lightline (powerline)
+"
+"
+function! CocCurrentFunction()
+    return get(b:, 'coc_current_function', '')
+endfunction
+
 let g:lightline = {
     \ 'colorscheme': 'one',
     \ 'active': {
-    \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'readonly', 'filename', 'modified' ],
+    \   'left': [ 
+    \     [ 'mode', 'paste' ], 
+    \     [ 'fugitive', 'readonly', 'filename', 'modified' ],
     \     [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok'],
     \   ],
     \   'right': [ 
