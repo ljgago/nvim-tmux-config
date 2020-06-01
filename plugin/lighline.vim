@@ -10,7 +10,7 @@ function! CocCurrentFunction()
 endfunction
 
 let g:lightline = {
-    \ 'colorscheme': 'one',
+    \ 'colorscheme': 'onedark',
     \ 'active': {
     \   'left': [ 
     \     [ 'mode', 'paste' ], 

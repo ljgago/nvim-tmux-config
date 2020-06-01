@@ -2,7 +2,7 @@
 "
 " Plug 'dense-analysis/ale'
 
-let g:ale_enabled = 1
+let g:ale_enabled = 0
 let g:ale_completion_enabled = 0
 " let b:ale_linters = {'javascript': ['eslint']}
 " let g:ale_lint_on_text_changed = 'never'

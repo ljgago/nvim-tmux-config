@@ -61,15 +61,17 @@ Plug 'taohexxx/lightline-buffer'
 Plug 'maximbaz/lightline-ale'
 
 " Theme Color
-Plug 'arcticicestudio/nord-vim'
-Plug 'lifepillar/vim-solarized8'
+"Plug 'arcticicestudio/nord-vim'
+"Plug 'lifepillar/vim-solarized8'
 Plug 'joshdick/onedark.vim'
 Plug 'rakr/vim-one'
-Plug 'jeffkreeftmeijer/vim-dim'
-Plug 'owickstrom/vim-colors-paramount'
-Plug 'drewtempelmeyer/palenight.vim'
+"Plug 'jeffkreeftmeijer/vim-dim'
+"Plug 'owickstrom/vim-colors-paramount'
+"Plug 'drewtempelmeyer/palenight.vim'
 Plug 'morhetz/gruvbox'
-Plug 'trevordmiller/nova-vim'
+"Plug 'trevordmiller/nova-vim'
+" Plug 'sonph/onehalf', {'rtp': 'vim/'}
+
 
 " Discord Rich Presence
 " Plug 'anned20/vimsence'

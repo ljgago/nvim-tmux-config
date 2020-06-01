@@ -22,7 +22,8 @@ set mouse=a                         " enable mouse interaction.
 set history=1000                    " increase history size.
 set nowrap                          " do not divide the line if it is long.
 set cursorline                      " show the current line.
-set cursorcolumn                    " show the cursor column.
+" set cursorcolumn                    " show the cursor column.
+set synmaxcol=120
 
 " default identation
 set tabstop=2                       " tabs with 4 spaces.
@@ -53,7 +54,7 @@ set backspace=indent,eol,start      " backspaceever work on insert mode
 
 " theme color settings
 set background=dark                 " theme background light or dark
-colorscheme one                     " theme name
+colorscheme onedark                 " onehalfdark theme name
 if (has("termguicolors"))
     set termguicolors               " enable true colors
 endif
@@ -74,8 +75,21 @@ nnoremap <F4> :NERDTreeToggle<CR>
 inoremap <F4> <Esc>:NERDTreeToggle<CR>
 nnoremap <F5> :TagbarToggle<CR>
 inoremap <F5> <Esc>:TagbarToggle<CR>
-autocmd TermOpen term://* startinsert
 
+" Move line
+" Normal mode
+nnoremap <C-Down> :m .+1<CR>==
+nnoremap <C-Up> :m .-2<CR>==
+
+" Insert mode
+inoremap <C-Down> <ESC>:m .+1<CR>==gi
+inoremap <C-Up> <ESC>:m .-2<CR>==gi
+
+" Visual mode
+vnoremap <C-Down> :m '>+1<CR>gv=gv
+vnoremap <C-Up> :m '<-2<CR>gv=gv
+
+autocmd TermOpen term://* startinsert
 
 " set wildmode=longest:full
 " set wildmenu                " enchanced command line completion
@@ -100,4 +114,3 @@ autocmd TermOpen term://* startinsert
 
 " let g:deoplete#enable_at_startup = 1
 " let g:tagbar_expand = 1
-
