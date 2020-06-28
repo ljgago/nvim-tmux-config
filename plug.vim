@@ -33,11 +33,15 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "Plug 'pangloss/vim-javascript'
 " typescrypt
 " Plug 'HerringtonDarkholme/yats.vim'
-Plug 'leafgarland/typescript-vim'
-Plug 'maxmellon/vim-jsx-pretty'
+
+" Plug 'leafgarland/typescript-vim'
+" Plug 'maxmellon/vim-jsx-pretty'
+
 " Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 " Plug 'othree/yajs.vim'
+
 Plug 'peitalin/vim-jsx-typescript'
+
 " Plug 'styled-components/vim-styled-components'
 
 " rust
@@ -52,13 +56,13 @@ Plug 'sheerun/vim-polyglot'
 
 " Plug 'Yggdroot/indentLine'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'dense-analysis/ale'
-Plug 'chooh/brightscript.vim' 
+" Plug 'dense-analysis/ale'
+" Plug 'chooh/brightscript.vim' 
 
 " Powerline Color
 Plug 'itchyny/lightline.vim'
 Plug 'taohexxx/lightline-buffer'
-Plug 'maximbaz/lightline-ale'
+"Plug 'maximbaz/lightline-ale'
 
 " Theme Color
 "Plug 'arcticicestudio/nord-vim'

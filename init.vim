@@ -23,7 +23,7 @@ set history=1000                    " increase history size.
 set nowrap                          " do not divide the line if it is long.
 set cursorline                      " show the current line.
 " set cursorcolumn                    " show the cursor column.
-set synmaxcol=120
+set synmaxcol=160
 
 " default identation
 set tabstop=2                       " tabs with 4 spaces.

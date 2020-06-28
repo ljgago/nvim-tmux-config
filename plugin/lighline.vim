@@ -5,25 +5,25 @@
 " Config lightline (powerline)
 "
 "
-function! CocCurrentFunction()
-    return get(b:, 'coc_current_function', '')
-endfunction
 
 let g:lightline = {
     \ 'colorscheme': 'onedark',
     \ 'active': {
-    \   'left': [ 
-    \     [ 'mode', 'paste' ], 
-    \     [ 'fugitive', 'readonly', 'filename', 'modified' ],
+    \   'left': [
+    \     [ 'mode', 'paste' ],
+    \     [ 'gitbranch', 'readonly', 'filename', 'modified' ],
     \     [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok'],
+    \     [ 'cocstatus', 'currentFunction' ],
     \   ],
     \   'right': [ 
     \     ['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype'],
     \   ]
     \ },
     \ 'component_function': {
-    \   'fugitive': 'LightLineFugitive',
+    \   'gitbranch': 'GitBranch',
     \   'bufferinfo': 'lightline#buffer#bufferinfo',
+    \   'cocstatus': 'coc#status',
+    \   'currentFunction': 'CocCurrentFunction'
     \ },
     \ 'tabline': {
     \   'left': [ [ 'bufferinfo' ],
@@ -49,7 +49,32 @@ let g:lightline = {
     \ },
 \ }
 
+function! GitBranch()
+  return  (FugitiveHead() != '') ? "\ue0a0 ".FugitiveHead() : ''
+endfunction
+
+function! CocCurrentFunction()
+    return get(b:, 'coc_current_function', '')
+endfunction
+
+" function! LightLineFugitive()
+"   if exists("*fugitive#head")
+"     let _ = fugitive#head()
+"     return strlen(_) ? "\ue0a0 "._ : ""
+"   endif
+"   return ''
+" endfunction
+" 
+" function! LightLineTabFilename(n) abort
+"   let buflist = tabpagebuflist(a:n)
+"   let winnr = tabpagewinnr(a:n)
+"   let _ = expand('#'.buflist[winnr - 1].':p:.')
+"   return _ !=# '' ? _ : '[No Name]'
+" endfunction
+
+
 set laststatus=2
+set noshowmode
 
 " lightline-buffer ui settings
 " replace these symbols with ascii characters if your environment does not support unicode
@@ -96,19 +121,5 @@ let g:lightline_buffer_reservelen = 20
 let g:lightline#ale#indicator_checking = "\uf110 "
 let g:lightline#ale#indicator_warnings = "\uf071  "
 let g:lightline#ale#indicator_errors = "\uf05e  "
-" let g:lightline#ale#indicator_ok = \uf00c 
+let g:lightline#ale#indicator_ok = "\uf00c  "
 
-function! LightLineFugitive()
-  if exists("*fugitive#head")
-    let _ = fugitive#head()
-    return strlen(_) ? "\ue0a0 "._ : ""
-  endif
-  return ''
-endfunction
-
-function! LighLineTabFilename(n) abort
-  let buflist = tabpagebuflist(a:n)
-  let winnr = tabpagewinnr(a:n)
-  let _ = expand('#'.buflist[winnr - 1].':p:.')
-  return _ !=# '' ? _ : '[No Name]'
-endfunction
