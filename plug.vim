@@ -15,7 +15,7 @@ Plug 'junegunn/fzf.vim',
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs' " Autocomplete simbols
-Plug 'jremmen/vim-ripgrep'
+" Plug 'jremmen/vim-ripgrep'
 Plug 'majutsushi/tagbar'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'aurieh/discord.nvim', { 'do': ':UpdateRemotePlugins'}

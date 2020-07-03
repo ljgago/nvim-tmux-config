@@ -18,6 +18,7 @@ call plug#end()
 " general settings
 set title                           " show the file name on terminal window.
 set number                          " show line numbers.
+set relativenumber
 set mouse=a                         " enable mouse interaction.
 set history=1000                    " increase history size.
 set nowrap                          " do not divide the line if it is long.
