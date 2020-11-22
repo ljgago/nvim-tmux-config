@@ -10,7 +10,7 @@ Plug 'tpope/vim-fugitive'
 
 " Utils
 Plug 'thaerkh/vim-workspace' " Save the session status
-Plug 'junegunn/fzf', " { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim',
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
@@ -28,7 +28,13 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " c++
 "Plug 'bfrg/vim-cpp-modern'
 " go
-"Plug 'fatih/vim-go' ", { 'tag': '*' }
+Plug 'fatih/vim-go' ", { 'tag': '*' }
+
+" clojure
+Plug 'tpope/vim-fireplace'
+Plug 'luochen1990/rainbow'
+Plug 'guns/vim-sexp'
+Plug 'tpope/vim-sexp-mappings-for-regular-people'
 " javascript
 "Plug 'pangloss/vim-javascript'
 " typescrypt
@@ -51,8 +57,8 @@ Plug 'peitalin/vim-jsx-typescript'
 " vue
 "Plug 'posva/vim-vue'
 Plug 'sheerun/vim-polyglot'
-
-
+Plug 'alampros/vim-styled-jsx'
+Plug 'amiralies/vim-rescript'
 
 " Plug 'Yggdroot/indentLine'
 Plug 'editorconfig/editorconfig-vim'

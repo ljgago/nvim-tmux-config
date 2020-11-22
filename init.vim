@@ -55,7 +55,7 @@ set backspace=indent,eol,start      " backspaceever work on insert mode
 
 " theme color settings
 set background=dark                 " theme background light or dark
-colorscheme onedark                 " onehalfdark theme name
+colorscheme onedark                 " onedark theme name
 if (has("termguicolors"))
     set termguicolors               " enable true colors
 endif
@@ -74,8 +74,12 @@ nnoremap <F3> :Buffers<CR>
 inoremap <F3> <Esc>:Buffers<CR>
 nnoremap <F4> :NERDTreeToggle<CR>
 inoremap <F4> <Esc>:NERDTreeToggle<CR>
-nnoremap <F5> :TagbarToggle<CR>
-inoremap <F5> <Esc>:TagbarToggle<CR>
+nnoremap <F5> :Rg<CR>
+inoremap <F5> <Esc>:Rg<CR>
+nnoremap <F6> :TagbarToggle<CR>
+inoremap <F6> <Esc>:TagbarToggle<CR>
+
+:imap ii <Esc>
 
 " Move line
 " Normal mode
@@ -86,11 +90,29 @@ nnoremap <C-Up> :m .-2<CR>==
 inoremap <C-Down> <ESC>:m .+1<CR>==gi
 inoremap <C-Up> <ESC>:m .-2<CR>==gi
 
+" nnoremap <Down> gj
+" nnoremap <Up> gk
+" inoremap <Down> <ESC>gja
+" inoremap <Up> <ESC>gka
+
 " Visual mode
 vnoremap <C-Down> :m '>+1<CR>gv=gv
 vnoremap <C-Up> :m '<-2<CR>gv=gv
 
+let mapleader = ","
+noremap <leader>w :w<CR>
+noremap <leader>q :q<CR>
+noremap <leader>gs :CocSearch
+noremap <leader>fs :Files<CR>
+"noremap <leader><CR> <CR><c-w>h:q<CR>
+:imap ii <Esc>
+
+let NERDTreeQuitOnOpen=1
 autocmd TermOpen term://* startinsert
+
+" autocmd Syntax clojure EnableSyntaxExtension
+
+"let g:fzf_preview_window = ''
 
 " set wildmode=longest:full
 " set wildmenu                " enchanced command line completion
